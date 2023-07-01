@@ -20,6 +20,24 @@ Psuedocode is a method of planning a program by breaking a program down into sma
 I would say ideally 80% thinking/planning, 20% coding, but depending on time constraints and complexity, this might not always be possible.
 */
 
+/* 
+B. Strings
+For all other questions that involve writing code, you can solve them via the following instructions.
 
-
+1 Create a variable called firstVariable
+2 Assign it the value of the string "Hello World"
+3 Change the value of this variable to some number
+4 Store the value of firstVariable in a new variable called secondVariable
+5 Change the value of secondVariableto any string.
+6 What is the value of firstVariable?
+7 Create a variable called yourName and set it equal to your name as a string. Then, write an expression that takes the string "Hello, my name is " and the variable yourName so that it returns a new string with them concatenated.
+ex: Hello, my name is Jean Valjean
+*/
+let firstVariable = 'Hello World';
+firstVariable = 42;
+let secondVariable = firstVariable;
+secondVariable ="any string";
+//firstVariable value is 42.
+let yourName ='Taylor';
+console.log(`Hello, my name is ${yourName}`);
 
