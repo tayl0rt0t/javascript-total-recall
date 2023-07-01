@@ -290,3 +290,108 @@ const kristynsCloset = [
   let acc = thomsCloset[2][2];
   console.log(`Thom is looking fierce in a ${shirt}, ${pants} and ${acc}!`);
   thomsCloset[1].splice(2,1,"Footie Pajamas");
+
+//IV. Functions
+/*
+A. printGreeting
+*/
+/*
+B. printCool
+Write a function printCoolthat accepts one parameter, name as an argument. The function should print the name and a message saying that that person is cool.
+*/
+function printCool(name){
+    console.log(`${name} is cool!`)
+}
+printCool('Taylor');
+
+/* 
+C. calculateCube
+Write a function calculateCube that takes a single number and prints the volume of a cube made from that number.
+*/
+function calculateCube(num){
+    console.log(num * num * num)
+}
+/* 
+D. isVowel
+Write a function isVowel that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case. Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you want.
+*/
+function isVowel(letter){
+    letter = letter.toLowerCase();
+    const vowel = ['a', 'e', 'i', 'o','u']
+    if (letter.length === 1 && vowel.includes(letter)){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(isVowel('z'));
+console.log(isVowel('A'));
+console.log(isVowel('3'));
+console.log(isVowel('u'));
+/* 
+E. getTwoLengths
+Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+*/
+function getTwoLengths(string1, string2){
+    if(typeof(string1) === 'string' && typeof(string2) === 'string'){
+        const arr = [];
+        arr.unshift(string1.length)
+        arr.push(string2.length);
+        return arr;
+    }
+    else{ 
+        return 'Both arguments must be a string';
+    }
+}
+
+console.log(getTwoLengths('apple','alxkjskdlf;dkajf'));
+console.log(getTwoLengths(3, 399));
+/*
+F. getMultipleLengths
+Write a function getMultipleLengthsthat accepts a single parameter as an argument: an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
+*/
+// psuedocode--
+// create a function that accepts an array of strings
+// create an array which holds the lengths of each string passed to the function
+// in the function, loop through the strings array
+// push the length of each index into the lengths array
+// return the lengths array when complete
+function getMultipleLengths(...arr){
+    const lengths = [];
+    for (let i = 0; i < arr.length; i++){
+        lengths.push(arr[i].length);
+    };
+    return lengths;
+}
+getMultipleLengths('hay','hey','haay');
+/* 
+G. maxOfThree
+Define a function maxOfThreethat takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
+*/
+function maxOfThree(num1,num2,num3){
+    if(typeof (num1) === 'number' && typeof (num2) === 'number' && typeof (num3) === 'number'){
+        console.log(Math.max(num1,num2,num3));
+    }
+    else{
+        console.log("NaN");
+    }
+}
+maxOfThree(9, 'HI', 23)
+maxOfThree(9,100000,9);
+maxOfThree(9,9,9);
+maxOfThree(7,10,10);
+/*
+H. printLongestWord
+Write a function printLongestWordthat accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+*/
+function printLongestWord(...arr){
+    let word = '';
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i].length > word.length){
+            word = arr[i];
+        }
+    }
+    console.log(word);
+}
+printLongestWord('apple','bananas','milk','wawawawawawawawawaw', 'pen','wawawawawawawawawaw');
