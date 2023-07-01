@@ -151,3 +151,142 @@ for(let i = 1; i <= 100; i++){
     bank_account += i * 2;
 }
 console.log(bank_account);
+
+//ARRAYS & CONTROL FLOW
+/*
+A. Talk about it:
+?What are the things in an array called?
+Elements
+?Do Arrays guarantee those things will be in order?
+No
+?What real-life thing could you model with an array?
+An ice cube tray. And today was a good day.
+*/
+/*
+B. Easy Does It
+Create an array that contains three quotes and store it in a variable called quotes
+*/
+const quotes = ["I'll be back", "No Fate but What We Make", "I'm tired of these heccin' snakes on this heccin' plane!"]
+/* 
+C. Accessing elements
+Given the following array const randomThings = [1, 10, "Hello", true]
+?How do you access the 1st element in the array?
+randomThings[0];
+?Change the value of "Hello"to "World"
+randomThings.splice(2,1,"World");
+!Check the value of the array to make sure it updated the array. How? Why, yes! console.log();
+*/
+const randomThings = [1, 10, "Hello", true];
+randomThings.splice(2,1,"World");
+console.log(randomThings);
+/* 
+D. Change values
+Given the following array const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"]
+
+What would you write to access the 3rd element of the array?
+Change the value of "Github" to "Octocat"
+Add a new element, "Cloud City" to the array
+*/
+const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
+ourClass[2]; //access 3rd elem
+ourClass.splice(4,1,"Octocat");
+ourClass.push("Cloud City");
+/*
+E. Mix It Up
+Note: You don't really need .splice()for these. You could use it, but there are simpler array methods that are more appropriate.
+
+Given the following array: const myArray = [5, 10, 500, 20]
+
+Add the string "Aegon"to the end of the array. Add another string of your choice to the end of the array.
+Remove the 5from the beginning of the array.
+Add the string "Bob Marley"to the beginning of the array.
+Remove the string of your choice from the end of the array.
+Reverse this array using Array.prototype.reverse(). 
+?Did you mutate the array? 
+Yes
+?What does mutate mean? 
+To alter
+?Did the .reverse()method return anything?
+a reversed reference of this array
+*/
+const myArray = [5, 10, 500, 20];
+myArray.push("Aegon");
+myArray.shift();
+myArray.pop();
+myArray.reverse();
+/* 
+F. Biggie Smalls
+Create a variable that contains an integer.
+
+Write an if ... elsestatement that:
+
+console.log()s "little number" if the number is entered is less than 100
+console.log()s big numberif the number is greater than or equal to 100.
+*/
+let num = 3;
+if(num <= 100){
+    console.log('Little number');
+}
+else{
+    console.log('BIG NUMBER');
+}
+/**
+G. Monkey in the Middle
+Write an if ... else if ... elsestatement:
+
+console.log() little number if the number entered is less than 5.
+If the number entered is more than 10, log big number.
+Otherwise, log "monkey".
+*/
+num = 20;
+if(num < 5){
+    console.log('little number');
+}
+if(num > 10){
+    console.log('big number');
+}
+else{
+    console.log('monkey');
+}
+/**
+ H. What's in Your Closet?
+Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript.
+*/
+const kristynsCloset = [
+    "left shoe",
+    "cowboy boots",
+    "right sock",
+    "Per Scholas hoodie",
+    "green pants",
+    "yellow knit hat",
+    "marshmallow peeps"
+  ];
+  
+  // Thom's closet is more complicated. Check out this nested data structure!!
+  const thomsCloset = [
+    [
+      // These are Thom's shirts
+      "grey button-up",
+      "dark grey button-up",
+      "light blue button-up",
+      "blue button-up",
+    ],[
+      // These are Thom's pants
+      "grey jeans",
+      "jeans",
+      "PJs"
+    ],[
+      // Thom's accessories
+      "wool mittens",
+      "wool scarf",
+      "raybans"
+    ]
+  ];
+  console.log("Kristyn is rocking that " + kristynsCloset[2] + " today!" )
+  kristynsCloset.splice(6,0,"Raybans");
+  kristynsCloset.splice(5,1,"Stained knit hat");
+  let shirt = thomsCloset[0][1];
+  let pants = thomsCloset[1][2];
+  let acc = thomsCloset[2][2];
+  console.log(`Thom is looking fierce in a ${shirt}, ${pants} and ${acc}!`);
+  thomsCloset[1].splice(2,1,"Footie Pajamas");
