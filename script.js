@@ -483,3 +483,74 @@ function oldAndLoud(person){
 }
 oldAndLoud(user);
 console.log(user);
+
+/* 
+Cat Combinator
+*/
+/*
+1. Mama cat
+Define an object called cat1 that contains the following properties:
+
+name
+breed
+age (a number)
+console.log the cat's age
+console.log the cat's breed
+*/
+const cat1 = {
+    name: `Bengi`,
+    breed: 'black cat',
+    age: 3,
+}
+console.log(`Cat 1's age: ${cat1.age}, breed: ${cat1.breed} `)
+/* 
+2. Papa cat
+Define an object called cat2 that also contains the properties:
+
+name
+breed
+age (a number)
+
+*/
+const cat2 = {
+    name:'Miffin',
+    breed: 'Wild Cat',
+    age: 1
+}
+/**
+ 3. Combine Cats!
+The cats are multiplying!
+
+Write a function combineCats that has two parameters mama, and papa. The function will take two arguments -- each a cat object.
+
+Pass cat1 and cat2 as arguments to the combineCats function. The function should console.log them.
+*/
+//function combineCats(mama, papa){
+    
+//    console.log(mama,papa);
+//}
+//combineCats(cat1,cat2);
+/*
+Make it so the combineCats function will return a combination of the two incoming cats
+
+The result should be an object wherein the
+
+name is a concatenation of the parents' names
+the age is 1
+the breed is each of the parents' breeds with a hyphen in between
+
+*/
+function combineCats(mama, papa){
+    const cat3 = {
+        name: mama.name+papa.name,
+        age:1,
+        breed:`${mama.breed}-${papa.breed}`
+    }
+    return cat3
+}
+
+console.log(combineCats(cat1,cat2));
+/*
+Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+*/
+console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2), combineCats(cat1, cat2)));
